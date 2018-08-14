@@ -1,0 +1,31 @@
+{
+  "name": "universal-validator",
+  "version": "0.1.0",
+  "description": "centralized validation policy controller over multiple deployments",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "~1.9.2",
+    "chai": "^3.4.1",
+    "chai-http": "^4.0.0",
+    "mocha": "^2.3.4"
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "keywords": [
+    "node",
+    "validator",
+    "backend",
+    "centralized validation policy controller over multiple deployments"
+  ],
+  "license": "MIT",
+  "author": ""
+}
