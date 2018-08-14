@@ -1,11 +1,11 @@
-
-required
-min
-max
-minLength
-maxLength
-email
-url
-equalTo
-type
-oneOf
+                jquery            node           java
+required        ok
+min             ok
+max             ok
+minLength       ok      
+maxLength       ok
+email           ok
+url             ok
+equalTo         ok
+type            ok
+oneOf           ok
