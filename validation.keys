@@ -1,0 +1,11 @@
+
+required
+min
+max
+minLength
+maxLength
+email
+url
+equalTo
+type
+oneOf
