@@ -65,11 +65,13 @@ public class Rules {
     }
 
     public boolean email(Object o){
+
         if(o==null){
             return true;
+
         }
         else if(o instanceof String && isValidEmail((String)o)){
-            return true;
+           return true;
         }
         return false;
     }
@@ -87,6 +89,7 @@ public class Rules {
     public boolean equalTo(Object o1, Object o2){
         if(o1 == null && o2 == null){
             return true;
+
         }
         else {
             String objectString1 = new Gson().toJson(o1);
@@ -125,13 +128,13 @@ public class Rules {
     private static boolean isValidEmail(String email)
     {
         Matcher m = emailPattern.matcher(email);
-        return !m.matches();
+        return m.matches();
     }
 
     private static boolean isValidUrl(String url)
     {
         Matcher m = urlPattern.matcher(url);
-        return !m.matches();
+        return m.matches();
     }
 
 

@@ -77,14 +77,15 @@ public class Validator {
                         out.put(key, "cannot be longer than " + rule.get("maxLength"));
                     }
                 }
-                if(ruleKeys.contains("email") &&!fieldError && rule.get("email") instanceof String){
+                if(ruleKeys.contains("email") &&!fieldError && rule.get("email") instanceof Boolean){
+
                     if(!ruleTester.email(model.get(key))){
                         hasError = true;
                         fieldError = true;
                         out.put(key, "cannot be non-email format");
                     }
                 }
-                if(ruleKeys.contains("url") &&!fieldError && rule.get("url") instanceof String){
+                if(ruleKeys.contains("url") &&!fieldError && rule.get("url") instanceof Boolean){
                     if(!ruleTester.url(model.get(key))){
                         hasError = true;
                         fieldError = true;
@@ -92,6 +93,7 @@ public class Validator {
                     }
                 }
                 if(ruleKeys.contains("equalTo") &&!fieldError && rule.get("equalTo") instanceof String){
+
                     if(!ruleTester.equalTo(model.get(key),model.get((String)rule.get("equalTo")))){
                         hasError = true;
                         fieldError = true;

@@ -16,6 +16,19 @@
                 "male",
                 "female"
             ]
+        },
+        "password" :{
+            "required" :true
+        },
+        "passwordConfirm":{
+            "required" : true,
+            "eualTo" : "password"
+        },
+        "email":{
+            "email" : true
+        },
+        "website" :{
+            "url" : true
         }
     }
 }
