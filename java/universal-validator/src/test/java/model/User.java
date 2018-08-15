@@ -1,8 +1,5 @@
 package model;
 
-
-
-
 public class User {
     private int age;
     private String name;
@@ -40,13 +37,14 @@ public class User {
         return sex;
     }
 
-    public User(int age, String name, String sex,String password,String passwordConfirm,String email, String website){
+    public User(int age, String name, String sex, String password, String passwordConfirm, String email,
+            String website) {
         this.age = age;
         this.name = name;
         this.sex = sex;
-        this.password=password;
+        this.password = password;
         this.passwordConfirm = passwordConfirm;
-        this.email=email;
+        this.email = email;
         this.website = website;
     }
 }

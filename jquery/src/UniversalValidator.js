@@ -12,70 +12,70 @@ function fetchJSONFile(path, callback) {
     httpRequest.open('GET', path);
     httpRequest.send();
 }
-//
-// this requests the file and executes a callback with the parsed result once
-//   it is available
-fetchJSONFile('https://cors.io/?http://nilankamanoj.tk/universal-validator/validation.json', function (data) {
-    // do something with your data
+fetchJSONFile(url, function (data) {
     console.log(data);
     validationProperties = data;
-    validate( "formRegister");
+    validate(formName);
 });
-
-// jQuery.validator.addMethod("checkDrop", function (value, element) {
-
-//     if (value != "NO" && value != "empty" && value != "0") {
-//         return true;
-//     }
-//     else return false;
-// });
-
 function validate(formName) {
     $(function () {
         var rules = {};
+        var messages = {};
         for (var key in validationProperties[formName]) {
             if (validationProperties[formName].hasOwnProperty(key)) {
                 var val = validationProperties[formName][key];
-                var rule = {}
+                var rule = {};
+                var message = {};
 
                 if (typeof val.required !== 'undefined' && val.required == true) {
                     rule.required = true
+                    message.required = "cannot be empty"
                 }
 
                 if (typeof val.min !== 'undefined' && Number.isInteger(val.min)) {
                     rule.min = val.min
+                    message.min = "cannot be less than " + val.min
                 }
                 if (typeof val.max !== 'undefined' && Number.isInteger(val.max)) {
                     rule.max = val.max
+                    message.max = "cannot be greater than " + val.max
                 }
                 if (typeof val.minLength !== 'undefined' && Number.isInteger(val.minLength)) {
                     rule.minlength = val.minLength
+                    message.minlength = "cannot be shoter than " + val.minLength
                 }
                 if (typeof val.maxLength !== 'undefined' && Number.isInteger(val.maxLength)) {
                     rule.maxlength = val.maxLength
+                    message.maxlength = "cannot be longer than " + val.maxLength
                 }
                 if (typeof val.email !== 'undefined' && val.email == true) {
                     rule.email = true;
+                    message.email = "cannot be non-email format"
                 }
                 if (typeof val.url !== 'undefined' && val.url == true) {
                     rule.url = true;
+                    message.url = "cannot be non-url format"
                 }
-                if (typeof val.eualTo !== 'undefined') {
-                    rule.eualTo = '#' + val.eualTo;
+                if (typeof val.equalTo !== 'undefined') {
+                    rule.equalTo = '#' + val.equalTo;
+                    message.equalTo = "cannot be different from " + val.equalTo
                 }
                 if (typeof val.oneOf !== 'undefined') {
-
+                    var values = val.oneOf.slice();
                     jQuery.validator.addMethod("oneOf", function (value, element) {
-                        if (val.oneOf.includes(value)) return true
+
+                        if (values.includes(value)) return true
                         else return false
 
                     });
 
                     rule.oneOf = true
+                    message.oneOf = "cannot be excluded from " + val.oneOf
 
                 }
 
                 rules[key] = rule;
+                messages[key] = message;
 
             }
 
@@ -85,6 +85,7 @@ function validate(formName) {
 
         $("form[id='" + formName + "']").validate({
             rules: rules,
+            messages: messages,
             submitHandler: function (form) {
                 form.submit();
             }

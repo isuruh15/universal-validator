@@ -7,7 +7,7 @@
     <groupId>org.universal-validator</groupId>
     <artifactId>validator</artifactId>
     <version>0.1.0</version>
-
+    <packaging>jar</packaging>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
