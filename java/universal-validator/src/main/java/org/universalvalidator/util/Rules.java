@@ -1,7 +1,9 @@
 package org.universalvalidator.util;
 
 import com.google.gson.Gson;
+import org.json.JSONArray;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -101,10 +103,21 @@ public class Rules {
         if(o == null && arr == null){
             return true;
         }
-        if(arr instanceof Object[] && Arrays.asList((Object[]) arr).contains(o)){
-            return true;
+        else{
+            ArrayList<String> list = new ArrayList<String>();
+            JSONArray jsonArray = (JSONArray)arr;
+            if (jsonArray != null) {
+                int len = jsonArray.length();
+                for (int i=0;i<len;i++){
+                    list.add(jsonArray.get(i).toString());
+                }
+            }
+            if(list.contains((String)o)){
+                return true;
+            }
+            return false;
         }
-        return false;
+
 
     }
 
