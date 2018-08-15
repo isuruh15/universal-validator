@@ -1,0 +1,34 @@
+{
+    "formRegister": {
+        "name": {
+            "required": true,
+            "maxLength": 10,
+            "minLength": 3
+        },
+        "age": {
+            "required": true,
+            "max": 50,
+            "min": 18
+        },
+        "sex": {
+            "required": true,
+            "oneOf": [
+                "male",
+                "female"
+            ]
+        },
+        "password" :{
+            "required" :true
+        },
+        "passwordConfirm":{
+            "required" : true,
+            "eualTo" : "password"
+        },
+        "email":{
+            "email" : true
+        },
+        "website" :{
+            "url" : true
+        }
+    }
+}

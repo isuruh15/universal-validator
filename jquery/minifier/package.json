@@ -1,0 +1,15 @@
+{
+  "name": "minifier",
+  "version": "1.0.0",
+  "description": "minification of js before delever",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+   "uglify-js": "^3.3.27"
+  },
+  "author": "nilanka manoj",
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+                jquery            node           java
+required        ok				ok
+min             ok				ok
+max             ok				ok
+minLength       ok  				ok    
+maxLength       ok				ok
+email           ok				ok
+url             ok				ok
+equalTo         ok				ok
+type            
+oneOf           ok				ok
