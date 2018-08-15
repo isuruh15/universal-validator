@@ -1,21 +1,40 @@
 <html>
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-        <script src="../src/UniversalValidator.js"></script>
-    </head>
-    <body>
-        <form id= "formRegister">
-            <label for="name">name</label>
-            <input id="name" name="name" />
-            <br/>
-            <label for="age">age</label>
-            <input id="age" name="age" />
-            <br/>
-            <label for="sex">gender</label>
-            <input id="sex" name="sex" />
-            <input type="submit" value="Validate!">
-            <br/>
-            
-    </body>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script type="text/javascript">
+        var formName = "formRegister";
+        var url = 'https://cors.io/?http://nilankamanoj.tk/universal-validator/validation.json'
+    </script>
+    <script src="./universal.validator.min.js"></script>
+</head>
+
+<body>
+    <form id="formRegister">
+        <label for="name">name</label>
+        <input id="name" name="name" />
+        <br/>
+        <label for="age">age</label>
+        <input id="age" name="age" />
+        <br/>
+        <label for="sex">gender</label>
+        <input id="sex" name="sex" />
+        <br/>
+        <label for="password">password</label>
+        <input id="password" name="password" />
+        <br/>
+        <label for="passwordConfirm">passwordConfirm</label>
+        <input id="passwordConfirm" name="passwordConfirm" />
+        <br/>
+        <label for="email">email</label>
+        <input id="email" name="email" />
+        <br/>
+        <label for="website">website</label>
+        <input id="website" name="website" />
+        <input type="submit" value="Validate!">
+        <br/>
+
+</body>
+
 </html>
