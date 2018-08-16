@@ -7,16 +7,18 @@ Centralized validation policy controller over multiple deployments
 
 # Supporting validations
 |key|jquery|java|nodejs|
-|---|---|---|---|---|
-required    |ok|ok|
-min         |ok|ok|
-max         |ok|ok|
-minLength   |ok|ok|   
-maxLength   |ok|ok|
-email       |ok|ok|
-url         |ok|ok|
-equalTo     |ok|ok|
-oneOf       |ok|ok|
+|---|---|---|---|
+|required    |ok|ok||
+|min         |ok|ok||
+|max         |ok|ok||
+|minLength   |ok|ok||
+|maxLength   |ok|ok||
+|email       |ok|ok||
+|url         |ok|ok||
+|equalTo     |ok|ok||
+|oneOf       |ok|ok||
+
+
 
 # Use Universel-Validator
 ## 1. Universal setup for validations
