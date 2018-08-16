@@ -1,4 +1,4 @@
-package io.github.nilankamanoj.util;
+package com.github.nilankamanoj.util;
 
 import org.json.JSONObject;
 import java.io.BufferedReader;

@@ -1,6 +1,6 @@
-package io.github.nilankamanoj;
+package com.github.nilankamanoj;
 
-import io.github.nilankamanoj.util.*;
+import com.github.nilankamanoj.util.*;
 import org.json.JSONObject;
 import com.google.common.collect.Lists;
 
