@@ -1,5 +1,5 @@
 import model.User;
-import org.universalvalidator.Validator;
+import io.github.nilankamanoj.Validator;
 import org.junit.jupiter.api.Test;
 import java.util.Map;
 

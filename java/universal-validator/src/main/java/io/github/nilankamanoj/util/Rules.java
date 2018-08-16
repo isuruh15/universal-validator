@@ -1,4 +1,4 @@
-package org.universalvalidator.util;
+package io.github.nilankamanoj.util;
 
 import com.google.gson.Gson;
 import org.json.JSONArray;

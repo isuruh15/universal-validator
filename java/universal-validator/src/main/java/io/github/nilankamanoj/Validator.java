@@ -1,9 +1,7 @@
-package org.universalvalidator;
+package io.github.nilankamanoj;
 
+import io.github.nilankamanoj.util.*;
 import org.json.JSONObject;
-import org.universalvalidator.util.Mapper;
-import org.universalvalidator.util.RuleLoader;
-import org.universalvalidator.util.Rules;
 import com.google.common.collect.Lists;
 
 import java.util.*;

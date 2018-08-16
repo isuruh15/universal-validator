@@ -1,4 +1,4 @@
-package org.universalvalidator.util;
+package io.github.nilankamanoj.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

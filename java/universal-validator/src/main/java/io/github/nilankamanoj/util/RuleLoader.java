@@ -1,4 +1,4 @@
-package org.universalvalidator.util;
+package io.github.nilankamanoj.util;
 
 import org.json.JSONObject;
 import java.io.BufferedReader;
@@ -18,7 +18,7 @@ public class RuleLoader {
         JSONObject jsonObject = null;
         try {
             jsonObject = new JSONObject(sendGet(this.url));
-            System.out.println(jsonObject.toString());
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
