@@ -13,7 +13,6 @@ function fetchJSONFile(path, callback) {
     httpRequest.send();
 }
 fetchJSONFile(url, function (data) {
-    console.log(data);
     validationProperties = data;
     validate(formName);
 });
@@ -81,8 +80,6 @@ function validate(formName) {
 
 
         }
-        console.log(rules);
-
         $("form[id='" + formName + "']").validate({
             rules: rules,
             messages: messages,
