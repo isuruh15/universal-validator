@@ -1,5 +1,8 @@
 # universal-validator
-Centralized validation policy controller over multiple deployments
+Centralized validation policy controller over multiple deployments. This prevents the cost of :
+- Implementing the validation for same set of objects in multiple subsystems.
+- Re -coding, re-compilation and re-test on policy change.
+- Re-deployment and non-zero downtime of upgrading.
 
 # wrapping libraries :
 - jquery : https://jqueryvalidation.org/
@@ -117,5 +120,6 @@ eg:
 
 ```
 - So, form submission is prevented until universal rules are satisfied by the user input.
+
 
 
