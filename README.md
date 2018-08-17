@@ -1,5 +1,15 @@
-# universal-validator
-Centralized validation policy controller over multiple deployments. This prevents the cost of :
+<h1 align="center">
+  <br>
+  <a href="#"><img src="https://raw.githubusercontent.com/nilankamanoj/universal-validator/master/assets/images/universal_validator.png" alt="UNIVERSAL VALIDATOR" width="200"></a>
+  <br>
+  UNIVERSAL VALIDATOR
+  <br>
+  <br>
+</h1>
+
+**Centralized validation policy controller over multiple deployments.**
+
+This prevents the cost of :
 - Implementing the validation for same set of objects in multiple subsystems.
 - Re -coding, re-compilation and re-test on policy change.
 - Re-deployment and non-zero downtime of upgrading.
@@ -120,6 +130,55 @@ eg:
 
 ```
 - So, form submission is prevented until universal rules are satisfied by the user input.
+
+## 3. Configure Java application
+- Import universal validator to the project.
+eg : 
+
+maven :
+```xml
+<dependency>
+  <groupId>com.github.nilankamanoj</groupId>
+  <artifactId>validator</artifactId>
+  <version>0.1.1</version>
+</dependency>
+```
+gradle : 
+```groovy
+compile 'com.github.nilankamanoj:validator:0.1.1'
+```
+- All dependancy addition instructions for other dependancey managemant systems are available at, https://search.maven.org/artifact/com.github.nilankamanoj/validator/
+- Initiate the validator instance along with the **URL of validation.json**.
+- Validate **object** along with the **form-name** that you have given in the validation.json.
+
+eg:
+```java
+import model.User;
+import com.github.nilankamanoj.Validator;
+import java.util.Map;
+
+public class ValidatorTest {
+    public void test() {
+        User user = new User(20, "fxxsx", "male", "pass", "passs", "aaaa@aa.com", "https://aaaa.com");
+        Validator validator = new Validator(
+                "https://cors.io/?http://nilankamanoj.tk/universal-validator/validation.json");
+        Map out = validator.validate(user, "formRegister");
+        System.out.println(out);
+    }
+
+}
+```
+- **Out** of the validator is a **HashMap** that contains the boolean property of **hasErrr** that indicates the validity. 
+- Hashmap contains the **error** along with the **field as the key** if **hasErr is true**.
+```java
+if(out.get("hasError)){
+// handle error
+}
+else{
+//continue process
+}
+```
+
 
 
 
